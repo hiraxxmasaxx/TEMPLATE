@@ -1,0 +1,59 @@
+$main: #111622;
+$sub: #F1D900;
+$accent: #FF0000;
+$white: #FFFFFF;
+$black: #000000;
+$border: #3C465F;
+
+body {
+  @include fontsize(14);
+  min-width: 320px;
+  width: 100%;
+  color: $white;
+  font-family: "游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic","メイリオ",sans-serif;
+  background-color: $main;
+  @include mq(sp) {
+    background-image: url(../img/bg_sp.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+a,
+a:visited,
+a:active,
+a:hover {
+  color: $white;
+  text-decoration: none;
+}
+
+select,
+input[type="submit"],
+input[type="button"]{
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  &:focus {
+    outline: none;
+  }
+}
+
+.is-pc {
+  @include mq(pc) {
+    display: block;
+  }
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.is-sp {
+  @include mq(pc) {
+    display: none;
+  }
+  @include mq(sp) {
+    display: block;
+  }
+}

@@ -1,0 +1,31 @@
+@mixin fontsize($size, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) + rem;
+}
+
+$breakpoints: (
+'sp': 'screen and (max-width: 767px)',
+'pc': 'screen and (min-width: 768px)',
+) !default;
+@mixin mq($breakpoint: pc) {
+  @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+@mixin center($direction) {
+	position: absolute;
+	@if $direction==xy {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@else if $direction==x {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@else if $direction==y {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

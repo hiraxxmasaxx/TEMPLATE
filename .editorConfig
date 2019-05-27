@@ -1,0 +1,22 @@
+root = true
+
+[*]
+end_of_line = lf
+
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+[*.{html,njk,ejs,php}]
+charset = utf-8
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{scss,js}]
+charset = utf-8
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
